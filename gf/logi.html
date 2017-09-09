@@ -2,45 +2,44 @@
 <head>
 <title>소녀전선 - 군수</title>
 <script>
-var colInfo = [ [    0,  1,       0,    1,    1,    1,   1,   1,   0,   0,   0,   0,   0, 1, 1, 1, 1, 1, 0 ],
-                [    0,  0,       0,    0,    1,    1,   1,   1,   1,   1,   1,   1,   1, 1, 1, 1, 1, 1, 0 ] ];
-var data    = [ ["0-1", 40, "00:50",   50,    0,  145, 145,   0,  "",  "", "○", "○",  ""],
-			    ["0-2", 45, "03:00",  180,  550,    0,   0, 350, "○",  "",  "",  "",  ""],
-			    ["0-3", 45, "12:00",  720,  900,  900, 900, 250,  "", "○",  "", "○",  ""],
-			    ["0-4", 50, "24:00", 1440,    0, 1200, 800, 750,  "",  "",  "",  "", "○"],
-			    ["1-1",  1, "00:15",   15,   10,   30,  15,   0,  "",  "",  "",  "",  ""],
-			    ["1-2",  3, "00:30",   30,    0,   40,  60,   0,  "",  "",  "",  "",  ""],
-			    ["1-3",  5, "01:00",   60,   30,    0,  30,  10,  "",  "",  "", "○",  ""],
-			    ["1-4",  6, "02:00",  120,  160,  160,   0,   0, "○",  "",  "",  "",  ""],
-			    ["2-1",  5, "00:40",   40,  100,    0,   0,  30,  "",  "",  "",  "",  ""],
-			    ["2-2",  8, "01:30",   90,   60,  200,  80,   0,  "",  "",  "", "○",  ""],
-			    ["2-3", 10, "04:00",  240,   10,   10,  10, 230,  "",  "", "○", "○",  ""],
-			    ["2-4", 15, "06:00",  360,    0,  250, 600,  60, "○",  "",  "",  "",  ""],
-			    ["3-1", 12, "00:20",   20,   50,    0,  75,   0,  "",  "",  "",  "",  ""],
-			    ["3-2", 20, "00:45",   45,    0,  120,  70,  30,  "",  "",  "",  "",  ""],
-			    ["3-3", 15, "01:30",   90,    0,  300,   0,   0,  "",  "", "○", "○",  ""],
-			    ["3-4", 25, "05:00",  300,    0,    0, 300, 300, "○", "○",  "",  "",  ""],
-			    ["4-1", 30, "01:00",   60,    0,  185, 185,   0,  "", "○",  "",  "",  ""],
-			    ["4-2", 35, "02:00",  120,    0,    0,   0, 210,  "",  "", "○",  "",  ""],
-			    ["4-3", 40, "06:00",  360,  800,  550,   0,   0, "○",  "",  "", "○",  ""],
-			    ["4-4", 40, "08:00",  480,  400,  400, 400, 150,  "",  "", "○",  "",  ""],
-			    ["5-1", 30, "00:30",   30,    0,    0, 100,  45,  "",  "",  "",  "",  ""],
-			    ["5-2", 35, "02:30",  150,    0,  600, 300,   0,  "",  "",  "", "○",  ""],
-			    ["5-3", 40, "04:00",  240,  800,  400, 400,   0,  "", "○",  "",  "",  ""],
-			    ["5-4", 40, "07:00",  420,  100,    0,   0, 700, "○",  "",  "",  "",  ""],
-			    ["6-1", 35, "02:00",  120,  300,  300,   0, 100,  "",  "",  "",  "",  ""],
-			    ["6-2", 40, "03:00",  180,    0,  200, 550, 100,  "",  "", "○", "○",  ""],
-			    ["6-3", 45, "05:00",  300,    0,    0, 200, 500,  "", "○",  "",  "",  ""],
-			    ["6-4", 45, "12:00",  720,  800,  800, 800,   0,  "",  "",  "",  "", "○"],
-			    ["7-1", 40, "02:30",  150,  650,    0, 650,   0,  "",  "",  "",  "",  ""],
-			    ["7-2", 45, "04:00",  240,    0,  650,   0, 300, "○",  "",  "", "○",  ""],
-			    ["7-3", 50, "05:30",  330,  900,  600, 600,   0,  "", "○",  "",  "",  ""],
-			    ["7-4", 50, "08:00",  480,  250,  250, 250, 600,  "",  "", "○",  "",  ""],
-			    ["8-1", 45, "01:00",   60,  150,  150, 150,   0,  "", "○",  "",  "",  ""],
-			    ["8-2", 50, "03:00",  180,    0,    0,   0, 450,  "",  "",  "", "○",  ""],
-			    ["8-3", 55, "06:00",  360,  400,  800, 800,   0,  "",  "", "○", "○",  ""],
-			    ["8-4", 60, "09:00",  540, 1500,  400, 400, 100, "○",  "",  "",  "",  ""] ];
-
+var data = [ ["0-1", 40, "00:50",   50,    0,  145, 145,   0, 0, 0, 1, 1, 0],
+             ["0-2", 45, "03:00",  180,  550,    0,   0, 350, 1, 0, 0, 0, 0],
+             ["0-3", 45, "12:00",  720,  900,  900, 900, 250, 0, 1, 0, 1, 0],
+             ["0-4", 50, "24:00", 1440,    0, 1200, 800, 750, 0, 0, 0, 0, 1],
+             ["1-1",  1, "00:15",   15,   10,   30,  15,   0, 0, 0, 0, 0, 0],
+             ["1-2",  3, "00:30",   30,    0,   40,  60,   0, 0, 0, 0, 0, 0],
+             ["1-3",  5, "01:00",   60,   30,    0,  30,  10, 0, 0, 0, 1, 0],
+             ["1-4",  6, "02:00",  120,  160,  160,   0,   0, 1, 0, 0, 0, 0],
+             ["2-1",  5, "00:40",   40,  100,    0,   0,  30, 0, 0, 0, 0, 0],
+             ["2-2",  8, "01:30",   90,   60,  200,  80,   0, 0, 0, 0, 1, 0],
+             ["2-3", 10, "04:00",  240,   10,   10,  10, 230, 0, 0, 1, 1, 0],
+             ["2-4", 15, "06:00",  360,    0,  250, 600,  60, 1, 0, 0, 0, 0],
+             ["3-1", 12, "00:20",   20,   50,    0,  75,   0, 0, 0, 0, 0, 0],
+             ["3-2", 20, "00:45",   45,    0,  120,  70,  30, 0, 0, 0, 0, 0],
+             ["3-3", 15, "01:30",   90,    0,  300,   0,   0, 0, 0, 1, 1, 0],
+             ["3-4", 25, "05:00",  300,    0,    0, 300, 300, 1, 1, 0, 0, 0],
+             ["4-1", 30, "01:00",   60,    0,  185, 185,   0, 0, 1, 0, 0, 0],
+             ["4-2", 35, "02:00",  120,    0,    0,   0, 210, 0, 0, 1, 0, 0],
+             ["4-3", 40, "06:00",  360,  800,  550,   0,   0, 1, 0, 0, 1, 0],
+             ["4-4", 40, "08:00",  480,  400,  400, 400, 150, 0, 0, 1, 0, 0],
+             ["5-1", 30, "00:30",   30,    0,    0, 100,  45, 0, 0, 0, 0, 0],
+             ["5-2", 35, "02:30",  150,    0,  600, 300,   0, 0, 0, 0, 1, 0],
+             ["5-3", 40, "04:00",  240,  800,  400, 400,   0, 0, 1, 0, 0, 0],
+             ["5-4", 40, "07:00",  420,  100,    0,   0, 700, 1, 0, 0, 0, 0],
+             ["6-1", 35, "02:00",  120,  300,  300,   0, 100, 0, 0, 0, 0, 0],
+             ["6-2", 40, "03:00",  180,    0,  200, 550, 100, 0, 0, 1, 1, 0],
+             ["6-3", 45, "05:00",  300,    0,    0, 200, 500, 0, 1, 0, 0, 0],
+             ["6-4", 45, "12:00",  720,  800,  800, 800,   0, 0, 0, 0, 0, 1],
+             ["7-1", 40, "02:30",  150,  650,    0, 650,   0, 0, 0, 0, 0, 0],
+             ["7-2", 45, "04:00",  240,    0,  650,   0, 300, 1, 0, 0, 1, 0],
+             ["7-3", 50, "05:30",  330,  900,  600, 600,   0, 0, 1, 0, 0, 0],
+             ["7-4", 50, "08:00",  480,  250,  250, 250, 600, 0, 0, 1, 0, 0],
+             ["8-1", 45, "01:00",   60,  150,  150, 150,   0, 0, 1, 0, 0, 0],
+             ["8-2", 50, "03:00",  180,    0,    0,   0, 450, 0, 0, 0, 1, 0],
+             ["8-3", 55, "06:00",  360,  400,  800, 800,   0, 0, 0, 1, 1, 0],
+             ["8-4", 60, "09:00",  540, 1500,  400, 400, 100, 1, 0, 0, 0, 0] ];
+var colInfo = [ [ 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 ],
+                [ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1 ] ];
 function init()
 {
 	var table = document.getElementById("logi");
@@ -57,27 +56,34 @@ function init()
 			else
 				td.setAttribute("align", "right");
 			
-			if (j == 3)
+			if (3 <= j && j <= 7)
 				td.setAttribute("hidden", true);
 			
-			if (j < 13)
+			if (j < 8)
 			{
 				td.innerText = data[i][j];
 			}
-			else if (j < 17)
+			else if (j < 12)
 			{
-				td.innerText = Math.round(data[i][j - 9] * 60 / data[i][3]);
+				td.innerText = Math.round(data[i][j - 4] * 60 / data[i][3]);
 			}
-			else if (j < 18)
+			else if (j < 13)
 			{
 				td.innerText = "";
 			}
+			else if (j < 14)
+			{
+				var check = document.createElement("input");
+				check.setAttribute("type", "checkbox");
+				check.onclick = function() { setCheck(); };
+				td.appendChild(check);
+			}
 			else
 			{
-				var x = document.createElement("input");
-				x.setAttribute("type", "checkbox");
-				x.onclick = function() { check(); };
-				td.appendChild(x);
+				if (data[i][j - 6] == 0)
+					td.innerText = "";
+				else
+					td.innerText = "○";
 			}
 			
 			tr.appendChild(td);
@@ -105,8 +111,13 @@ function setWeight()
 		var e3 = table.rows[i].cells[6].innerHTML;
 		var e4 = table.rows[i].cells[7].innerHTML;
 	
-		table.rows[i].cells[17].innerHTML = Math.round((e1 * w1 + e2 * w2 + e3 * w3 + e4 * w4) * 60 / time); 
+		table.rows[i].cells[12].innerHTML = Math.round((e1 * w1 + e2 * w2 + e3 * w3 + e4 * w4) * 60 / time); 
 	}
+}
+
+function setCheck()
+{
+
 }
 
 function uncheck()
@@ -117,11 +128,6 @@ function uncheck()
 		check[i].checked = false;
 }
 
-function check(name)
-{
-	
-}
-
 function sortTable(col)
 {
 	var table = document.getElementById("logi");
@@ -130,8 +136,8 @@ function sortTable(col)
 	var dir = "desc";
 	for (var i = 1; i < rows.length - 1; i++)
 	{
-		var x_check = rows[i].getElementsByTagName("TD")[18].getElementsByTagName("input")[0];
-		var y_check = rows[i + 1].getElementsByTagName("TD")[18].getElementsByTagName("input")[0];
+		var x_check = rows[i].getElementsByTagName("TD")[13].getElementsByTagName("input")[0];
+		var y_check = rows[i + 1].getElementsByTagName("TD")[13].getElementsByTagName("input")[0];
 		
 		if (!x_check.checked && y_check.checked)
 		{
@@ -169,8 +175,8 @@ function sortTable(col)
 		
 		for (var i = 1; i < rows.length - 1; i++)
 		{
-			var x_check = rows[i].getElementsByTagName("TD")[18].getElementsByTagName("input")[0];
-			var y_check = rows[i + 1].getElementsByTagName("TD")[18].getElementsByTagName("input")[0];
+			var x_check = rows[i].getElementsByTagName("TD")[13].getElementsByTagName("input")[0];
+			var y_check = rows[i + 1].getElementsByTagName("TD")[13].getElementsByTagName("input")[0];
 		
 			if (!x_check.checked && y_check.checked)
 			{
@@ -216,34 +222,34 @@ function sortTable(col)
 </script>
 </head>
 <body onload="init()">
-가중치
-인력<input id="w1" type="text" size="4" style = "text-align:right;" value="1" onchange="setWeight()">
-탄약<input id="w2" type="text" size="4" style = "text-align:right;" value="1" onchange="setWeight()">
-식량<input id="w3" type="text" size="4" style = "text-align:right;" value="1" onchange="setWeight()">
-부품<input id="w4" type="text" size="4" style = "text-align:right;" value="0.5" onchange="setWeight()"><br>
+가중치<br>
+인력<input id="w1" type="text" size="4" style = "text-align:right;" value="1">
+탄약<input id="w2" type="text" size="4" style = "text-align:right;" value="1">
+식량<input id="w3" type="text" size="4" style = "text-align:right;" value="1">
+부품<input id="w4" type="text" size="4" style = "text-align:right;" value="0.5">
+<input type="button" value="적용" onclick="setWeight()"><br>
 <br>
 <table id="logi" width = "100%" cellpadding="5" cellspacing="0" border="1" align="center" style="border-collapse:collapse; border:1px gray solid;">
 <tr>
-
 <th onclick="sortTable(0)">군수</th>
 <th onclick="sortTable(1)">레벨</th>
 <th onclick="sortTable(2)">시간</th>
 <th style="display:none;"></th>
-<th onclick="sortTable(4)">인력</th>
-<th onclick="sortTable(5)">탄약</th>
-<th onclick="sortTable(6)">식량</th>
-<th onclick="sortTable(7)">부품</th>
-<th onclick="sortTable(8)">인형<br>제조</th>
-<th onclick="sortTable(9)">장비<br>제조</th>
-<th onclick="sortTable(10)">쾌속<br>제조</th>
-<th onclick="sortTable(11)">쾌속<br>수복</th>
-<th onclick="sortTable(12)">코인</th>
-<th onclick="sortTable(13)">인/h</th>
-<th onclick="sortTable(14)">탄/h</th>
-<th onclick="sortTable(15)">식/h</th>
-<th onclick="sortTable(16)">부/h</th>
-<th onclick="sortTable(17)">가중치</th>
+<th style="display:none;"></th>
+<th style="display:none;"></th>
+<th style="display:none;"></th>
+<th style="display:none;"></th>
+<th onclick="sortTable(8)">인력</th>
+<th onclick="sortTable(9)">탄약</th>
+<th onclick="sortTable(10)">식량</th>
+<th onclick="sortTable(11)">부품</th>
+<th onclick="sortTable(12)">가중치</th>
 <th onclick="uncheck()"><input type="checkbox" onclick="return false;"></th>
+<th onclick="sortTable(14)">인형<br>제조</th>
+<th onclick="sortTable(15)">장비<br>제조</th>
+<th onclick="sortTable(16)">쾌속<br>제조</th>
+<th onclick="sortTable(17)">쾌속<br>수복</th>
+<th onclick="sortTable(18)">코인</th>
 </tr>
 </table>
 </body>
