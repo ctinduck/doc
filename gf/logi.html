@@ -46,6 +46,7 @@ function init()
 	for (var i = 0; i < data.length; i++)
 	{
 		var tr = document.createElement("tr");
+		tr.setAttribute("bgcolor", "white");
 		
 		for (var j = 0; j < colInfo[0].length; j++)
 		{
@@ -117,7 +118,34 @@ function setWeight()
 
 function setCheck()
 {
-
+	var s1 = 0;
+	var s2 = 0;
+	var s3 = 0;
+	var s4 = 0;
+	
+	var table = document.getElementById("logi");
+	var rows = table.getElementsByTagName("TR");
+	for (var i = 1; i < rows.length; i++)
+	{
+		var chk = rows[i].getElementsByTagName("TD")[13].getElementsByTagName("input")[0];
+		if (chk.checked)
+		{
+			s1 += Number(rows[i].getElementsByTagName("TD")[8].innerHTML);
+			s2 += Number(rows[i].getElementsByTagName("TD")[9].innerHTML);
+			s3 += Number(rows[i].getElementsByTagName("TD")[10].innerHTML);
+			s4 += Number(rows[i].getElementsByTagName("TD")[11].innerHTML);
+			rows[i].setAttribute("bgcolor", "yellow");
+		}
+		else
+		{
+			rows[i].setAttribute("bgcolor", "white");
+		}
+	}
+	
+	document.getElementById("s1").value = s1;
+	document.getElementById("s2").value = s2;
+	document.getElementById("s3").value = s3;
+	document.getElementById("s4").value = s4;
 }
 
 function uncheck()
@@ -126,6 +154,8 @@ function uncheck()
 	var check = table.getElementsByTagName("input");
 	for (var i = 1; i < check.length; i++)
 		check[i].checked = false;
+		
+	setCheck();
 }
 
 function sortTable(col)
@@ -229,6 +259,12 @@ function sortTable(col)
 부품<input id="w4" type="text" size="4" value="1">
 <input type="button" value="적용" onclick="setWeight()"><br>
 <br>
+- 합계<br>
+인력<input id="s1" type="text" size="4" value="0" readonly>
+탄약<input id="s2" type="text" size="4" value="0" readonly>
+식량<input id="s3" type="text" size="4" value="0" readonly>
+부품<input id="s4" type="text" size="4" value="0" readonly><br>
+<br>
 <table id="logi" cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse; border:1px gray solid;">
 <tr>
 <th onclick="sortTable(0)">군수</th>
@@ -239,10 +275,10 @@ function sortTable(col)
 <th style="display:none;"></th>
 <th style="display:none;"></th>
 <th style="display:none;"></th>
-<th onclick="sortTable(8)">인력</th>
-<th onclick="sortTable(9)">탄약</th>
-<th onclick="sortTable(10)">식량</th>
-<th onclick="sortTable(11)">부품</th>
+<th onclick="sortTable(8)">인력/h</th>
+<th onclick="sortTable(9)">탄약/h</th>
+<th onclick="sortTable(10)">식량/h</th>
+<th onclick="sortTable(11)">부품/h</th>
 <th onclick="sortTable(12)">가중치</th>
 <th onclick="uncheck()"><input type="checkbox" onclick="return false;"></th>
 <th onclick="sortTable(14)">인형<br>제조</th>
