@@ -222,14 +222,14 @@ function sortTable(col)
 </script>
 </head>
 <body onload="init()">
-가중치<br>
-인력<input id="w1" type="text" size="4" style = "text-align:right;" value="1">
-탄약<input id="w2" type="text" size="4" style = "text-align:right;" value="1">
-식량<input id="w3" type="text" size="4" style = "text-align:right;" value="1">
-부품<input id="w4" type="text" size="4" style = "text-align:right;" value="0.5">
+- 가중치<br>
+인력<input id="w1" type="text" size="4" value="1">
+탄약<input id="w2" type="text" size="4" value="1">
+식량<input id="w3" type="text" size="4" value="1">
+부품<input id="w4" type="text" size="4" value="1">
 <input type="button" value="적용" onclick="setWeight()"><br>
 <br>
-<table id="logi" width = "100%" cellpadding="5" cellspacing="0" border="1" align="center" style="border-collapse:collapse; border:1px gray solid;">
+<table id="logi" cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse; border:1px gray solid;">
 <tr>
 <th onclick="sortTable(0)">군수</th>
 <th onclick="sortTable(1)">레벨</th>
