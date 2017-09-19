@@ -93,7 +93,42 @@ function init()
 		table.appendChild(tr);
 	}
 	
+	var url = document.location.href;
+	var param1 = url.split("?");
+	if (param1.length == 2)
+	{
+		var param2 = param1[1].split("&");
+		for (var i = 0; i < param2.length; i++)
+		{
+			var param3 = param2[i].split("=");
+			
+			if (param3[0] == "w")
+			{
+				var param4 = param3[1].split(",");
+				if (param4.length == 4)
+				{
+					document.getElementById("w1").value = param4[0];
+					document.getElementById("w2").value = param4[1];
+					document.getElementById("w3").value = param4[2];
+					document.getElementById("w4").value = param4[3];
+				}
+			}
+			else if (param3[0] == "c")
+			{
+				var c = param3[1].split(",");
+				var table = document.getElementById("logi");
+				var rows = table.getElementsByTagName("TR");
+				for (var i = 1; i < rows.length; i++)
+					for (var j = 0; j < c.length; j++)
+						if (rows[i].getElementsByTagName("TD")[0].innerHTML == c[j])
+							rows[i].getElementsByTagName("TD")[13].getElementsByTagName("input")[0].checked = true;
+			}
+		}
+	}
+	
+	setCheck();
 	setWeight();
+	setUrl();
 }
 
 function setWeight()
@@ -103,6 +138,30 @@ function setWeight()
 	var w3 = document.getElementById("w3").value;
 	var w4 = document.getElementById("w4").value;
 
+	if (w1 == "")
+	{
+		document.getElementById("w1").value = "0";
+		w1 = "0";
+	}
+
+	if (w2 == "")
+	{
+		document.getElementById("w2").value = "0";
+		w2 = "0";
+	}
+
+	if (w3 == "")
+	{
+		document.getElementById("w3").value = "0";
+		w3 = "0";
+	}
+
+	if (w4 == "")
+	{
+		document.getElementById("w4").value = "0";
+		w4 = "0";
+	}
+	
 	var table = document.getElementById("logi");
 	for (var i = 1; i < table.rows.length; i++)
 	{
@@ -114,6 +173,8 @@ function setWeight()
 	
 		table.rows[i].cells[12].innerHTML = Math.round((e1 * w1 + e2 * w2 + e3 * w3 + e4 * w4) * 60 / time); 
 	}
+	
+	setUrl();
 }
 
 function setCheck()
@@ -146,6 +207,8 @@ function setCheck()
 	document.getElementById("s2").value = s2;
 	document.getElementById("s3").value = s3;
 	document.getElementById("s4").value = s4;
+	
+	setUrl();
 }
 
 function uncheck()
@@ -249,17 +312,43 @@ function sortTable(col)
 			break;
 	}
 }
+
+function setUrl()
+{
+	var url = document.location.href;
+	url = url.split("?")[0];
+	
+	url += "?w";
+	url += "=" + document.getElementById("w1").value;
+	url += "," + document.getElementById("w2").value;
+	url += "," + document.getElementById("w3").value;
+	url += "," + document.getElementById("w4").value;
+	
+	var param = "";
+	var table = document.getElementById("logi");
+	var rows = table.getElementsByTagName("TR");
+	for (var i = 1; i < rows.length; i++)
+		if(rows[i].getElementsByTagName("TD")[13].getElementsByTagName("input")[0].checked)
+			param += "," + rows[i].getElementsByTagName("TD")[0].innerHTML;
+			
+	if (param != "")
+		url += "&c=" + param.substring(1, param.length);
+	
+	document.getElementById("url").value = url;
+}
 </script>
 </head>
 <body onload="init()">
-- 가중치<br>
+- url
+<input id="url" type="text" size="24">
+<input id="url_move" type="button" value="이동" onclick='location.href = document.getElementById("url").value'><br>
+- 가중치
 인력<input id="w1" type="text" size="4" value="1">
 탄약<input id="w2" type="text" size="4" value="1">
 식량<input id="w3" type="text" size="4" value="1">
 부품<input id="w4" type="text" size="4" value="1">
 <input type="button" value="적용" onclick="setWeight()"><br>
-<br>
-- 합계<br>
+- 합계　
 인력<input id="s1" type="text" size="4" value="0" readonly>
 탄약<input id="s2" type="text" size="4" value="0" readonly>
 식량<input id="s3" type="text" size="4" value="0" readonly>
